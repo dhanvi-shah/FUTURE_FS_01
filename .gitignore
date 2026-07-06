@@ -12,8 +12,6 @@ dist
 dist-ssr
 .next
 out
-backend/node_modules
-backend/dist
 *.local
 
 # Editor directories and files

@@ -5,8 +5,6 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "dev:clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && next dev -p 3000",
-    "dev:backend": "npm run dev --prefix backend",
-    "dev:all": "concurrently -n frontend,backend -c cyan,green \"npm run dev\" \"npm run dev:backend\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,7 +17,6 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "concurrently": "^9.2.1",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/node": "^24.3.0",
     "@types/react": "^19.1.12",

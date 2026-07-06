@@ -47,11 +47,7 @@ export default function Contact() {
     };
 
     try {
-      const apiUrl =
-        process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ||
-        "http://localhost:4000";
-
-      const response = await fetch(`${apiUrl}/api/contact`, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),

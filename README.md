@@ -1,6 +1,6 @@
 # Dhanvi Shah — Portfolio
 
-A premium, modern personal portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+A premium, modern personal portfolio built with Next.js, TypeScript, Tailwind CSS, and Framer Motion. Deployed on Vercel with a built-in contact API route.
 
 ## Tech Stack
 
@@ -13,21 +13,13 @@ A premium, modern personal portfolio built with Next.js, TypeScript, Tailwind CS
 ## Getting Started
 
 ```bash
-make install   # install frontend + backend deps
-make dev       # run both servers together
-```
-
-On Windows (without GNU Make), run the same commands from the project folder — `make.cmd` is included and works in PowerShell/CMD.
-
-Equivalent npm commands:
-
-```bash
 npm install
-npm install --prefix backend
-npm run dev:all
+npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) for the frontend and [http://localhost:4000/health](http://localhost:4000/health) for the API.
+Open [http://localhost:3000](http://localhost:3000).
+
+On Windows, you can also run `make dev` using the included `make.cmd` wrapper.
 
 ## Build
 
@@ -35,6 +27,14 @@ Open [http://localhost:3000](http://localhost:3000) for the frontend and [http:/
 npm run build
 npm start
 ```
+
+## Vercel Deployment
+
+This project is a **frontend-only Next.js app** designed for Vercel:
+
+- `npm run build` runs `next build` only
+- Contact form submissions go to `/api/contact` (Next.js Route Handler)
+- No separate Express backend is required in production
 
 ## Features
 
@@ -46,7 +46,7 @@ npm start
 
 ## Sections
 
-Hero · About · Skills · Projects · Experience · Publications · Education · Certifications · Contact
+Hero · About · Skills · Projects · Experience · Certifications · Leadership · Volunteering · Publications · Education · Honors · Languages · Blog · Contact
 
 ---
 
