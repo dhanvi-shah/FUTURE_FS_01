@@ -5,7 +5,6 @@ import BackToTop from "@/components/layout/BackToTop";
 import CursorGlow from "@/components/layout/CursorGlow";
 import GradientBlobs from "@/components/layout/GradientBlobs";
 import Particles from "@/components/layout/Particles";
-import LoadingScreen from "@/components/layout/LoadingScreen";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
@@ -16,33 +15,28 @@ import Leadership from "@/components/sections/Leadership";
 import Volunteering from "@/components/sections/Volunteering";
 import Publications from "@/components/sections/Publications";
 import Education from "@/components/sections/Education";
-import Honors from "@/components/sections/Honors";
-import Languages from "@/components/sections/Languages";
 import BlogPosts from "@/components/sections/BlogPosts";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
     <>
-      <LoadingScreen />
       <ScrollProgress />
       <CursorGlow />
       <GradientBlobs />
       <Particles />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <About />
         <Skills />
         <Projects />
         <Experience />
+        <Publications />
         <Certifications />
         <Leadership />
         <Volunteering />
-        <Publications />
         <Education />
-        <Honors />
-        <Languages />
         <BlogPosts />
         <Contact />
       </main>

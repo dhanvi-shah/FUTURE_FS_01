@@ -29,7 +29,7 @@ function PostCard({ post, index }: { post: LinkedInPost; index: number }) {
   return (
     <motion.article
       layout
-      initial={{ opacity: 0, y: 24 }}
+      initial={false}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.35, delay: index * 0.05 }}

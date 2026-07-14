@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/data/portfolio";
-import { additionalNavLinks } from "@/data/linkedin";
 import { cn } from "@/lib/utils";
-
-const allNavLinks = [...navLinks, ...additionalNavLinks];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +16,7 @@ export default function Navbar() {
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = allNavLinks.map((l) => l.href.replace("#", ""));
+      const sections = navLinks.map((l) => l.href.replace("#", ""));
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
         if (el && el.getBoundingClientRect().top <= 120) {
@@ -60,21 +58,33 @@ export default function Navbar() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="text-lg font-bold tracking-tight"
+            className="flex items-center gap-3"
           >
-            <span className="gradient-text">{siteConfig.name.split(" ")[0]}</span>
-            <span className="text-white/80">.</span>
+            <div className="relative h-9 w-9 overflow-hidden rounded-full ring-2 ring-emerald-400/40">
+              <Image
+                src="/profile.png"
+                alt={siteConfig.name}
+                fill
+                className="object-cover object-top"
+                sizes="36px"
+                priority
+              />
+            </div>
+            <span className="text-lg font-bold tracking-tight">
+              <span className="gradient-text">{siteConfig.name.split(" ")[0]}</span>
+              <span className="text-white/80">.</span>
+            </span>
           </a>
 
-          <ul className="hidden items-center gap-1 md:flex">
-            {allNavLinks.map((link) => {
+          <ul className="hidden items-center gap-0.5 lg:flex">
+            {navLinks.map((link) => {
               const id = link.href.replace("#", "");
               return (
                 <li key={link.href}>
                   <button
                     onClick={() => handleNavClick(link.href)}
                     className={cn(
-                      "rounded-lg px-4 py-2 text-sm transition-colors",
+                      "rounded-lg px-2.5 py-2 text-xs transition-colors xl:px-3 xl:text-sm",
                       activeSection === id
                         ? "text-emerald-400"
                         : "text-white/60 hover:text-white"
@@ -88,7 +98,7 @@ export default function Navbar() {
             <li>
               <button
                 onClick={() => handleNavClick("#contact")}
-                className="ml-2 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 px-5 py-2 text-sm font-medium text-black transition-opacity hover:opacity-90"
+                className="ml-2 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 px-4 py-2 text-xs font-medium text-black transition-opacity hover:opacity-90 xl:px-5 xl:text-sm"
               >
                 Get in Touch
               </button>
@@ -96,7 +106,7 @@ export default function Navbar() {
           </ul>
 
           <button
-            className="rounded-lg p-2 text-white/80 md:hidden"
+            className="rounded-lg p-2 text-white/80 lg:hidden"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -112,10 +122,10 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-0 top-[60px] z-40 glass mx-4 rounded-2xl p-6 md:hidden"
+            className="fixed inset-x-0 top-[60px] z-40 glass mx-4 rounded-2xl p-6 lg:hidden"
           >
             <ul className="flex flex-col gap-2">
-              {allNavLinks.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => handleNavClick(link.href)}

@@ -45,7 +45,7 @@ export default function Skills() {
                   {category.skills.map((skill, i) => (
                     <motion.span
                       key={skill}
-                      initial={{ opacity: 0, y: 10 }}
+                      initial={false}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 + i * 0.05 }}

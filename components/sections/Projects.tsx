@@ -62,10 +62,10 @@ export default function Projects() {
                 <motion.article
                   key={project.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  initial={false}
                   animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.35, delay: index * 0.05 }}
                   whileHover={{ y: -8 }}
                   className={cn(
                     "group glass glass-hover relative overflow-hidden rounded-2xl p-6",

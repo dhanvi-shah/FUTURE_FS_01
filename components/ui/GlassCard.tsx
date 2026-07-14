@@ -18,9 +18,9 @@ export default function GlassCard({
 }: GlassCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.5, delay }}
       whileHover={hover ? { y: -4, transition: { duration: 0.2 } } : undefined}
       className={cn("glass rounded-2xl p-6", hover && "glass-hover", className)}

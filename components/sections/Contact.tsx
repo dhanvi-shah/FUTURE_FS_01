@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Send, CheckCircle } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { siteConfig } from "@/data/portfolio";
@@ -25,6 +25,12 @@ const contactInfo = [
     label: "LinkedIn",
     value: "dhanvi-shah",
     href: siteConfig.linkedin,
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "dhanvi-shah",
+    href: siteConfig.github,
   },
 ];
 

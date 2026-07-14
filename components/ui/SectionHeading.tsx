@@ -16,9 +16,9 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6 }}
       className={cn("mb-16 text-center", className)}
     >

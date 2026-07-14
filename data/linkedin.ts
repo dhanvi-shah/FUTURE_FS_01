@@ -1,10 +1,6 @@
 /** Additional content sourced from LinkedIn — additive only, does not modify core portfolio data */
 
-export const additionalNavLinks = [
-  { label: "Leadership", href: "#leadership" },
-  { label: "Awards", href: "#awards" },
-  { label: "Blog", href: "#blog" },
-];
+export const additionalNavLinks: { label: string; href: string }[] = [];
 
 export const leadershipRoles = [
   {
