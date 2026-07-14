@@ -19,6 +19,10 @@ const typingTexts = [
   "real-world impact",
 ];
 
+const longestTypingText = typingTexts.reduce((a, b) =>
+  a.length >= b.length ? a : b
+);
+
 function TypingAnimation() {
   const [textIndex, setTextIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -60,11 +64,11 @@ function TypingAnimation() {
 
 function DeveloperWorkspace() {
   const codeLines = [
-    { indent: 0, content: 'const build = async () => {', color: "text-cyan-400" },
-    { indent: 1, content: 'const ai = new Intelligence();', color: "text-emerald-400" },
-    { indent: 1, content: 'await ai.learn(patterns);', color: "text-white/70" },
-    { indent: 1, content: 'return ai.solve(problems);', color: "text-emerald-300" },
-    { indent: 0, content: '};', color: "text-cyan-400" },
+    { indent: 0, content: 'print("Welcome to my portfolio")', color: "text-emerald-300" },
+    { indent: 0, content: "", color: "" },
+    { indent: 0, content: 'focus = ["AI", "Full Stack", "Impact"]', color: "text-cyan-400" },
+    { indent: 0, content: "while ideas:", color: "text-white/70" },
+    { indent: 1, content: "ship(build(ideas.pop()))", color: "text-emerald-400" },
   ];
 
   return (
@@ -80,7 +84,7 @@ function DeveloperWorkspace() {
           <div className="h-3 w-3 rounded-full bg-red-500/80" />
           <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
           <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
-          <span className="ml-2 text-xs text-white/40">dhanvi.sh — workspace</span>
+          <span className="ml-2 text-xs text-white/40">portfolio.py — dhanvi</span>
         </div>
         <div className="p-6 font-mono text-sm">
           {codeLines.map((line, i) => (
@@ -89,7 +93,11 @@ function DeveloperWorkspace() {
               className="leading-7"
               style={{ paddingLeft: `${line.indent * 1.5}rem` }}
             >
-              <span className={line.color}>{line.content}</span>
+              {line.content ? (
+                <span className={line.color}>{line.content}</span>
+              ) : (
+                <span>&nbsp;</span>
+              )}
             </div>
           ))}
         </div>
@@ -172,30 +180,28 @@ export default function Hero() {
             {siteConfig.roles.join(" • ")}
           </motion.p>
 
-          <motion.p
-            {...fadeUp(0.25)}
-            className="mb-4 max-w-xl text-lg text-white/70 sm:text-xl"
-          >
-            I build <TypingAnimation /> that solves real-world problems using
-            AI, scalable backend systems, and modern web technologies.
-          </motion.p>
-
           <motion.div
-            {...fadeUp(0.3)}
-            className="flex flex-wrap gap-4"
+            {...fadeUp(0.25)}
+            className="relative mb-4 max-w-xl text-lg text-white/70 sm:text-xl"
           >
+            {/* Invisible spacer locks height to the longest typing phrase */}
+            <p className="invisible" aria-hidden="true">
+              I build {longestTypingText} that solves real-world problems using
+              AI, scalable backend systems, and modern web technologies.
+            </p>
+            <p className="absolute inset-0">
+              I build <TypingAnimation /> that solves real-world problems using
+              AI, scalable backend systems, and modern web technologies.
+            </p>
+          </motion.div>
+
+          <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4">
             <button
               onClick={() => scrollTo("projects")}
               className="group flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-500 to-cyan-500 px-7 py-3.5 text-sm font-semibold text-black transition-all hover:shadow-lg hover:shadow-emerald-500/25"
             >
               View Projects
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </button>
-            <button
-              onClick={() => scrollTo("contact")}
-              className="rounded-full glass glass-hover px-7 py-3.5 text-sm font-semibold text-white transition-all"
-            >
-              Contact Me
             </button>
           </motion.div>
         </div>

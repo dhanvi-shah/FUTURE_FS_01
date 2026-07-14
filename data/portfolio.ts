@@ -141,11 +141,11 @@ export const experiences = [
   {
     id: "odoo-bootcamp",
     company: "Odoo Bootcamp",
-    role: "Buildathon Participant",
+    role: "Buildathon member",
     period: "2025",
     location: "Dubai, UAE",
     description:
-      "Participated in the Odoo Buildathon organized by ACM BITS Pilani Dubai and Microsoft Tech Club.",
+      "Participated in the Odoo Buildathon",
     achievements: [
       "Built CircuFlow ERP and received Most Promising Idea recognition",
       "Developed custom Odoo models, workflows, and marketplace features",
@@ -244,5 +244,4 @@ export const navLinks = [
   { label: "Certifications", href: "#certifications" },
   { label: "Leadership", href: "#leadership" },
   { label: "Education", href: "#education" },
-  { label: "Blogs", href: "#blog" },
 ];

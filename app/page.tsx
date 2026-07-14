@@ -15,7 +15,6 @@ import Leadership from "@/components/sections/Leadership";
 import Volunteering from "@/components/sections/Volunteering";
 import Publications from "@/components/sections/Publications";
 import Education from "@/components/sections/Education";
-import BlogPosts from "@/components/sections/BlogPosts";
 import Contact from "@/components/sections/Contact";
 
 export default function Home() {
@@ -37,7 +36,6 @@ export default function Home() {
         <Leadership />
         <Volunteering />
         <Education />
-        <BlogPosts />
         <Contact />
       </main>
       <Footer />
