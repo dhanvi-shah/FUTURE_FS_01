@@ -37,7 +37,7 @@ export const skillCategories = [
   {
     title: "Frontend",
     icon: "Layout",
-    skills: ["React", "HTML", "CSS", "Tailwind"],
+    skills: ["React", "HTML", "CSS", "Tailwind CSS"],
     color: "cyan",
   },
   {
