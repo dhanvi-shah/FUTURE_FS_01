@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap } from "lucide-react";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { education } from "@/data/portfolio";
@@ -20,8 +20,14 @@ export default function Education() {
 
         <GlassCard>
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20">
-              <GraduationCap className="h-8 w-8 text-emerald-400" />
+            <div className="relative flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-white p-2">
+              <Image
+                src={education.logo}
+                alt={`${education.institution} logo`}
+                width={56}
+                height={56}
+                className="h-full w-full object-contain"
+              />
             </div>
             <div className="flex-1">
               <p className="mb-1 text-xs font-medium tracking-wider text-emerald-400 uppercase">

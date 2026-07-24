@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { BookOpen, ExternalLink } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { publications } from "@/data/portfolio";
@@ -22,8 +22,14 @@ export default function Publications() {
         {publications.map((pub) => (
           <GlassCard key={pub.title} className="group">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 text-emerald-400">
-                <BookOpen className="h-7 w-7" />
+              <div className="relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-white p-1.5">
+                <Image
+                  src={pub.logo}
+                  alt={`${pub.journal} logo`}
+                  width={48}
+                  height={48}
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div className="flex-1">
                 <div className="mb-2 flex flex-wrap items-center gap-3">

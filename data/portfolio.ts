@@ -124,13 +124,26 @@ export const projects: Project[] = [
   },
 ];
 
-export const experiences = [
+export interface Experience {
+  id: string;
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  description: string;
+  achievements: string[];
+  logo?: string;
+  highlight?: boolean;
+}
+
+export const experiences: Experience[] = [
   {
     id: "future-interns",
     company: "Future Interns",
     role: "Intern",
     period: "2025 – Present",
     location: "Remote",
+    logo: "/work experience/future interns.png",
     description:
       "Software development internship focused on building practical applications and gaining industry experience.",
     achievements: [
@@ -144,6 +157,7 @@ export const experiences = [
     role: "Buildathon member",
     period: "2025",
     location: "Dubai, UAE",
+    logo: "/work experience/odoo.png",
     description:
       "Participated in the Odoo Buildathon",
     achievements: [
@@ -173,6 +187,7 @@ export const experiences = [
     role: "Intern",
     period: "Apr 2023 – May 2023",
     location: "Remote",
+    logo: "/work experience/accenture.png",
     description: "Market research and consumer insights for client deliverables.",
     achievements: [
       "Conducted market research analysis",
@@ -186,6 +201,7 @@ export const experiences = [
     role: "Intern",
     period: "Apr 2023 – May 2023",
     location: "Remote",
+    logo: "/work experience/tata group.jpg",
     description: "Data analytics and customer insights using Tableau.",
     achievements: [
       "Created Tableau dashboards for customer analytics",
@@ -199,6 +215,7 @@ export const experiences = [
     role: "Intern",
     period: "Dec 2022 – Mar 2023",
     location: "Remote",
+    logo: "/work experience/cognizant.png",
     description: "Project management tool development using Agile methodologies.",
     achievements: [
       "Applied Agile and Scrum methodologies",
@@ -217,6 +234,7 @@ export const publications = [
     url: "https://www.ijnrd.org/viewpaperforall.php?paper=IJNRD2403351",
     journal: "International Journal of Novel Research and Development",
     pages: "d399–d403",
+    logo: "/research and publication/research and publication.png",
   },
 ];
 
@@ -225,14 +243,35 @@ export const education = {
   degree: "Bachelor of Engineering",
   field: "Computer Science",
   period: "2025 – 2029",
+  logo: "/education/BITS_Pilani-Logo.svg",
 };
 
 export const certifications = [
-  { name: "AI for Everyone", issuer: "DeepLearning.AI" },
-  { name: "CS50P", issuer: "HarvardX" },
-  { name: "Python Data Structures", issuer: "MichiganX" },
-  { name: "Understanding the World Through Data", issuer: "MITx" },
-  { name: "Abu Dhabi University Summer Program", issuer: "Abu Dhabi University" },
+  {
+    name: "AI for Everyone",
+    issuer: "DeepLearning.AI",
+    logo: "/certifications/deeplearning ai.jpg",
+  },
+  {
+    name: "CS50P",
+    issuer: "HarvardX",
+    logo: "/certifications/harvardx.jpg",
+  },
+  {
+    name: "Python Data Structures",
+    issuer: "MichiganX",
+    logo: "/certifications/michiganx.jpg",
+  },
+  {
+    name: "Understanding the World Through Data",
+    issuer: "MITx",
+    logo: "/certifications/mitx.png",
+  },
+  {
+    name: "Abu Dhabi University Summer Program",
+    issuer: "Abu Dhabi University",
+    logo: "/certifications/abu dhabi university.png",
+  },
 ];
 
 export const navLinks = [

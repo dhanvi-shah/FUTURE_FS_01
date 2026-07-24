@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { BadgeCheck } from "lucide-react";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassCard from "@/components/ui/GlassCard";
 import { certifications } from "@/data/portfolio";
@@ -23,8 +22,14 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <GlassCard key={cert.name} delay={index * 0.08} className="group">
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 transition-colors group-hover:bg-emerald-500/20">
-                  <BadgeCheck className="h-5 w-5" />
+                <div className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white p-1">
+                  <Image
+                    src={cert.logo}
+                    alt={`${cert.issuer} logo`}
+                    width={36}
+                    height={36}
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="mb-1 font-semibold leading-snug">{cert.name}</h3>
